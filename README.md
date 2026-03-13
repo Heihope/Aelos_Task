@@ -77,3 +77,6 @@
 4. **查看检测结果**
    ros2 topic echo /yolo_detections
    rqt_image_view
+
+
+https://github.com/user-attachments/assets/f4c29b30-e723-4b61-92e1-007695d886a9
