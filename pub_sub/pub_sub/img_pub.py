@@ -18,7 +18,7 @@ class ImagePublisher(Node):
         self.publisher_ = self.create_publisher(Image, 'image_raw', 10)
         # 定时器，每0.1秒发布一帧
         self.timer = self.create_timer(0.1, self.timer_callback)
-        # 打开摄像头（设备号0，可根据实际情况修改）
+        # 打开摄像头
         self.cap = cv2.VideoCapture(0)
         self.cv_bridge = CvBridge()
         self.get_logger().info('摄像头图像发布节点已启动')
