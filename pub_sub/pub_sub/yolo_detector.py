@@ -18,7 +18,7 @@ class YoloDetector(Node):
         self.sub = self.create_subscription(
             Image, 'image_raw', self.listener_callback, 10)
         self.pub = self.create_publisher(Detection2DArray, 'yolo_detections', 10)
-        # 新增：发布带标注的图像
+        # 发布带标注的图像
         self.image_pub = self.create_publisher(Image, 'yolo_image', 10)
 
         self.cv_bridge = CvBridge()
@@ -38,7 +38,7 @@ class YoloDetector(Node):
 
         results = self.model(cv_image, verbose=False)
 
-        # 新增：发布标注图像
+        # 发布标注图像
         if results and len(results) > 0:
             annotated_frame = results[0].plot()
             annotated_msg = self.cv_bridge.cv2_to_imgmsg(annotated_frame, 'bgr8')
