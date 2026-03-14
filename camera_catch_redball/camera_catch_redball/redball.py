@@ -64,7 +64,7 @@ def main(args=None):
     node = Node("red_ball_detector")
     node.get_logger().info("红色小球检测节点已启动")
 
-    # 获取脚本所在目录，构造图片路径（假设图片与脚本在同一目录下）
+    # 获取脚本所在目录，构造图片路径
     script_dir = os.path.dirname(os.path.abspath(__file__))
     image_path = os.path.join(script_dir, "redball.png")
 
